@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style2.css">
+    
+</head>
+<body>
+    <div class="login-container">
+        <h2 id="log"><b>Log in</b></h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username"><b>Username</b></label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password"><b>Password</b></label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+            <div id="errorMessage" class="error-message" aria-live="polite">Invalid username or password</div>
+        </form>
+    </div>
+    <div class="colorbar">
+        <div class="new"><b>NEW  HERE?</b></div>
+        <div class="p">Sign up and discover a great </div>
+        <div class="o">amount of new opportunites! </div>
+        <button class="signup">Sign up</button>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Simulate login validation (Replace with actual validation logic)
+            if (username === 'user' && password === 'password') {
+                // Redirect to mm.html
+                window.location.href = 'home.html';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
